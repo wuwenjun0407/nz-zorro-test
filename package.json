@@ -6,9 +6,7 @@
 		"start": "ng serve",
 		"build": "ng build",
 		"test": "ng test",
-		"lint": "ng lint",
 		"lint:ts": "tslint -p tsconfig.app.json -c tslint.json 'src/**/*.ts'",
-		"lint-staged": "lint-staged",
 		"e2e": "ng e2e"
 	},
 	"private": true,
@@ -33,8 +31,9 @@
 		"@types/jasmine": "~3.3.8",
 		"@types/jasminewd2": "~2.0.3",
 		"@types/node": "~8.9.4",
+		"husky": "4.2.5",
+		"lint-staged": "10.2.11",
 		"codelyzer": "^5.0.0",
-		"husky": "^7.0.1",
 		"jasmine-core": "~3.4.0",
 		"jasmine-spec-reporter": "~4.2.1",
 		"karma": "~4.1.0",
@@ -42,19 +41,14 @@
 		"karma-coverage-istanbul-reporter": "~2.0.1",
 		"karma-jasmine": "~2.0.1",
 		"karma-jasmine-html-reporter": "^1.4.0",
-		"lint-staged": "^11.1.2",
-		"pre-commit": "^1.2.2",
 		"protractor": "~5.4.0",
 		"ts-node": "~7.0.0",
 		"tslint": "~5.15.0",
 		"typescript": "~3.5.3"
 	},
-	"lint-staged": {
-		"*.ts": "npm run lint:ts"
-	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "lint-staged"
+			"pre-commit": "npm run lint:ts"
 		}
 	}
 }
