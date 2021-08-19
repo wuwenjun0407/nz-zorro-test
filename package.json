@@ -7,6 +7,7 @@
 		"build": "ng build",
 		"test": "ng test",
 		"lint:ts": "tslint -p tsconfig.app.json -c tslint.json 'src/**/*.ts'",
+		"lint:style": "stylelint 'src/**/*.less' --syntax less",
 		"e2e": "ng e2e"
 	},
 	"private": true,
@@ -46,9 +47,13 @@
 		"tslint": "~5.15.0",
 		"typescript": "~3.5.3"
 	},
+	"lint-staged": {
+		"*.ts": "npm run lint:ts",
+		"src/**/*.less": "npm run lint:style"
+	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "npm run lint:ts"
+			"pre-commit": "lint-staged"
 		}
 	}
 }
