@@ -1,30 +1,28 @@
-
 /**
-* feature：新功能
-* update：更新某功能
-* fixbug：修补某功能的bug
-* refactor：重构某个功能
-* optimize: 优化构建工具或运行时性能
-* style：仅样式改动
-* docs：仅文档新增/改动
-* chore：构建过程或辅助工具的变动
-*/
+ * upd： 更新某功能
+ * feat：新增功能
+ * fix：bug 修复
+ * docs：文档更新
+ * style：不影响程序逻辑的代码修改(修改空白字符，格式缩进，补全缺失的分号等，没有改变代码逻辑)
+ * refactor：重构代码(既没有新增功能，也没有修复 bug)
+ * perf：性能, 体验优化
+ * test：新增测试用例或是更新现有测试
+ * build：主要目的是修改项目构建系统(例如 glup，webpack，rollup 的配置等)的提交
+ * ci：主要目的是修改项目继续集成流程(例如 Travis，Jenkins，GitLab CI，Circle等)的提交
+ * chore：不属于以上类型的其他类型，比如构建流程, 依赖管理
+ * revert：回滚某个更早之前的提交
+ */
+
 module.exports = {
-    extends: [
-      '@commitlint/config-conventional'
-    ],
-    rules: {
-      'type-enum': [2, 'always', [
-        'feature', 'update', 'fixbug', 'refactor', 'optimize', 'style', 'docs', 'chore'
-      ]],
-      'type-case': [0],
-      'type-empty': [0],
-      'scope-empty': [0],
-      'scope-case': [0],
-      'subject-full-stop': [0, 'never'],
-      'subject-case': [0, 'never'],
-      'header-max-length': [0, 'always', 72]
-    }
-  };
-  // 这些配置是什么意思？请自行查阅commitlint文档
- 
+	extends: ['@commitlint/config-conventional'],
+	rules: {
+		'type-enum': [2, 'always', ['upd', 'feat', 'fix', 'refactor', 'docs', 'chore', 'style', 'revert']],
+		'type-case': [0],
+		'type-empty': [0],
+		'scope-empty': [0],
+		'scope-case': [0],
+		'subject-full-stop': [0, 'never'],
+		'subject-case': [0, 'never'],
+		'header-max-length': [0, 'always', 72],
+	},
+};
