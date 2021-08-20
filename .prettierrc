@@ -1,16 +1,44 @@
 {
-  "printWidth": 120,
-  "tabWidth": 4,
-  "useTabs": false,
-  "singleQuote": false,
-  "semi": true,
-  "trailingComma": "none",
-  "bracketSpacing": true,
-  "stylelintIntegration": true,
-  "overrides": [
-    {
-      "files": ".prettierrc",
-      "options": { "parser": "json" }
-    }
-  ]
+    "printWidth": 120,
+    "tabWidth": 4,
+    "useTabs": false,
+    "singleQuote": true,
+    "semi": true,
+    "trailingComma": "none",
+    "bracketSpacing": true,
+    "stylelintIntegration": true,
+    "overrides": [
+        {
+            "files": ["*.json", ".eslintrc", ".tslintrc", ".prettierrc", ".tern-project"],
+            "options": {
+                "parser": "json",
+                "tabWidth": 4
+            }
+        },
+        {
+            "files": "*.{css,sass,scss,less}",
+            "options": {
+                "parser": "css",
+                "tabWidth": 4
+            }
+        },
+        {
+            "files": "*.ts",
+            "options": {
+                "parser": "typescript"
+            }
+        },
+        {
+            "files": "*.vue",
+            "options": {
+                "parser": "vue"
+            }
+        },
+        {
+            "files": "*.md",
+            "options": {
+                "parser": "markdown"
+            }
+        }
+    ]
 }
