@@ -61,6 +61,7 @@
         "typescript": "~3.5.3"
     },
     "lint-staged": {
+        "src/**/*.less": "npm run lint:style",
         "*.{ts,tsx,js,json,html,yml,css,less,md}": [
             "prettier --write"
         ]
