@@ -8,7 +8,8 @@
         "test": "ng test",
         "lint:ts": "tslint -p tsconfig.app.json -c tslint.json 'src/**/*.ts'",
         "lint:style": "stylelint 'src/**/*.less' --syntax less",
-        "e2e": "ng e2e"
+        "e2e": "ng e2e",
+        "prepare": "husky install"
     },
     "private": true,
     "dependencies": {
@@ -56,14 +57,5 @@
         "ts-node": "~7.0.0",
         "tslint": "~5.15.0",
         "typescript": "~3.5.3"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
-    "lint-staged": {
-        "src/**/*.less": "npm run lint:style",
-        "*.{ts,tsx,js,json,html,yml,css,less,md}": ["prettier --write"]
     }
 }
