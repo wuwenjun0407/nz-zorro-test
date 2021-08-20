@@ -10,7 +10,8 @@
         "lint:style": "stylelint 'src/**/*.less' --syntax less",
         "e2e": "ng e2e",
         "prepare": "husky install",
-        "quick": "pretty-quick --staged"
+        "quick": "pretty-quick --staged",
+        "postinstall":"npx husky install"
     },
     "private": true,
     "dependencies": {
